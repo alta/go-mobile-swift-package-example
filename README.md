@@ -8,7 +8,11 @@ This package implements a simple API to fetch a URL using an HTTP `GET` request 
 
 ```swift
 var error: NSErrorPointer = nil
-let response = GoGet("https://golang.org/", error)
+		var error: NSErrorPointer = nil
+		guard let response = GoGet("https://golang.org/", error) else {
+			XCTFail("response == nil")
+			return
+		}
 guard error == nil else {
         return
 }

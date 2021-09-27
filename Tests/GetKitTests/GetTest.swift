@@ -5,12 +5,11 @@ import XCTest
 class GetTests: XCTestCase {
 	func testGet() {
 		var error: NSErrorPointer = nil
-		let response = GoGet("https://golang.org/", error)
-		XCTAssertNil(error)
-		guard let response = response else {
+		guard let response = GoGet("https://golang.org/", error) else {
 			XCTFail("response == nil")
 			return
 		}
+		XCTAssertNil(error)
 		guard let str = String(data: response, encoding: .utf8) else {
 			XCTFail("str == nil")
 			return
