@@ -2,9 +2,9 @@
 
 Example [Go](https://golang.org/) package built into an [XCFramework](https://developer.apple.com/documentation/swift_packages/distributing_binary_frameworks_as_swift_packages) for [Swift Package Manager](https://swift.org/package-manager/), targeting iOS, macOS, and macCatalyst targets.
 
-This package implements a simple API to fetch a URL using an HTTP `GET` request and return the response bytes.
-
 ## Calling Go from Swift
+
+This package implements a simple API to fetch a URL using an HTTP `GET` request and return the response bytes.
 
 ```swift
 var error: NSErrorPointer = nil
