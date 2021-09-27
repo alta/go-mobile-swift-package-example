@@ -17,6 +17,9 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Set Xcode version
+        run: sudo xcode-select -switch "/Applications/Xcode_13.app" # Comment this out when Xcode 13 is default on GHA runners
+
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
