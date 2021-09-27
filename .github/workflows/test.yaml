@@ -25,5 +25,14 @@ jobs:
         with:
           go-version: ^1
 
-      - name: Test
-        run: make test
+      - name: Build
+        run: make Build
+
+      - name: Test Go
+        run: go test -v ./...
+
+      - name: Test Swift
+        run: swift test
+
+      - name: Verify repo is unchanged
+        run: git diff --exit-code HEAD -w -G'(^[^# /])|(^#\w)|(^\s+[^#/])' # Ignore whitespace and comments
